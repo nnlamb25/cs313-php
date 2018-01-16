@@ -4,7 +4,7 @@ body {
     padding: 0px;
 }
     
-p {
+#home {
     background-color: #ccf2ff;
     padding: 30px 50px;
     margin: 0px;
@@ -16,5 +16,5 @@ p {
 i
 {
     font-size: 30px;
-    background-color: white;
+    padding-top: 30px;
 }
