@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hello!</title>
+  <title>Homepage</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script type="text/javascript" src="javascript.js"></script>
 </head>
-<body>
-  <p id="home">Home Page</p>
-  <p id="construction"><i>UNDER CONSTRUCTION</i></p>
+<body onload="showSlides()">
+  <div id="image-header">
+    <img class="hflag" src="homepage-images/flag-header/bosnia-flag.png" />
+    <img class="hflag" src="homepage-images/flag-header/croatia-flag.png" />
+    <img class="hflag" src="homepage-images/flag-header/serbia-flag.gif" />
+  </div>
+  <p id="header">Adriatic North Mission</p>
+    <div id="slideshow-wrapper">
+        <div id="images-wrapper">
+            <div class="images">
+                <div id="slides" class="slideful-outer slides">
+                    <div class="-slideswrap">
+                        <img class="-slideimg fade" id="slides-image-1" src="homepage-images/slide-show/image1.jpg">
+                        <img class="-slideimg fade" id="slides-image-2" src="homepage-images/slide-show/image2.jpg">
+                        <img class="-slideimg fade" id="slides-image-3" src="homepage-images/slide-show/image3.jpg">
+                        <img class="-slideimg fade" id="slides-image-4" src="homepage-images/slide-show/image4.jpg">
+                        <img class="-slideimg fade" id="slides-image-5" src="homepage-images/slide-show/image5.jpg">
+                        <img class="-slideimg fade" id="slides-image-6" src="homepage-images/slide-show/image6.jpg">
+                        <img class="-slideimg fade" id="slides-image-7" src="homepage-images/slide-show/image7.jpg">
+                        <img class="-slideimg fade" id="slides-image-8" src="homepage-images/slide-show/image8.jpg">
+                    </div>
+                    <img id="slides-buttonback" class="-buttonback" src="homepage-images/slide-show/button_back.png" onClick="imageBack()">
+                    <img id="slides-buttonforward" class="-buttonforward" src="homepage-images/slide-show/button_forward.png" onclick="imageForward()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="information">
+        <div id="home_info">
+            <p>Almost 40 years ago, the Church of Jesus Christ of Latter-Day Saints began missionary work in Jugoslavia with the help of basketball star Krešimir Ćosić.  Since then, the country has seen much change. Going through a civil war, splitting up into many different countries, and seeing the rid of communism are just a few of the drastic changes that have occurred there.  Now, missionaries are able to serve again in the countries of Bosnia, Croatia, Serbia, Montenegro, and Slovenia.</p>
+
+            <p>I served in the Adriatic North Mission from 2013 to 2015, just as my father did from 1979 to 1981.  When my father served, he did not work as a typical missionary.  Because of the communist government, my father was required to grow out his hair, wear regular attire, and call his companions by their first name.  It was also illegal to proselyte.  He was able to answer questions, however, and teach people if they asked to be taught (which did happen, often).</p>
+
+            <p>Much has changed since then, and during my service there I was able to dress and act as a missionary does anywhere else.  Being able to serve in the same place my father served was a great blessing to our family.  I got to meet people who he met and became close friends with.  My mission was one of the greatest defining moments of my life.  I learned and grew a lot, and learned to love serving the people there.</p>
+
+            <p>The church continues to grow in the Adriatic North Mission.  I know the Lord has much in store for that sacred land.  I'm glad that I got to be a part of it.  I saw the church grow, and made everlasting friendships.  My wife and I plan to return there one day to serve a mission as a senior couple.  I'm so excited for that day to come.</p>
+        </div>
+    </div>
+    <br />
+    <div id="assignments-link">
+        <a id="assignments-page" href="assignments.html">Click here to see my assignments for CS 313</a>
+    </div>
+    <br/><br />
 </body>
 </html>
