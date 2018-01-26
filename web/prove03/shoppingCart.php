@@ -194,7 +194,7 @@ $total = $_SESSION["drone1"] * 2899 + $_SESSION["drone2"] * 1699 + $_SESSION["dr
                             <td class="dName">Full Charger</td>
                             <td class="description">Facit mea sonum usu fit adhuc lus. Accepit creasse brachia de corpore corpori de. Pendent hac cum sed usu minimum colores. Ingenio vim colores istarum cui equidem. </td>
                             <td class="price">$79 x</td>
-                            <td class="quantity"><input type="number" name="charger2" class="num" value="'.$_SESSION["charger1"].'" style="width: 50px; margin-left: 5px;">
+                            <td class="quantity"><input type="number" name="charger1" class="num" value="'.$_SESSION["charger1"].'" style="width: 50px; margin-left: 5px;">
                             <input type="submit" name="submit" value="Update Item" style="margin-bottom: 32px; font-size: 25px;">
                             </td>
                             </tr>';

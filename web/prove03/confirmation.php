@@ -162,7 +162,7 @@ $total = $_SESSION["drone1"] * 2899 + $_SESSION["drone2"] * 1699 + $_SESSION["dr
                         if ($_SESSION["charger1"] > 0)
                         {
                             echo '<tr id="charger1">
-                            <td class="preview"><img src="charger2.jpg" alt="charger2"></td>
+                            <td class="preview"><img src="charger1.jpg" alt="charger1"></td>
                             <td class="dName">Full Charger</td>
                             <td class="description">Facit mea sonum usu fit adhuc lus. Accepit creasse brachia de corpore corpori de. Pendent hac cum sed usu minimum colores. Ingenio vim colores istarum cui equidem. </td>
                             <td class="price">$79 x</td>
