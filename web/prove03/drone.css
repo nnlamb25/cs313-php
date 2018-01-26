@@ -1,0 +1,228 @@
+html {
+    
+    background: url("source.gif") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+a {
+    
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+#document {
+    
+}
+
+#header {
+    
+    font-family: sans-serif;
+    font-variant: small-caps;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 1.8em;
+    text-shadow:
+    -1px -1px 0 #ffffff,
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
+    color: #1e1eb1;
+    position: absolute;
+    left: 30%;
+    padding-top: -40px;
+}
+
+#motto {
+    
+    font-family: sans-serif;
+    left: 75%;
+    top: 0%;
+    font-size: 1em;
+    font-style: italic;
+    color: darkblue;
+    margin-bottom: 100px;
+    position: fixed;
+}
+
+#statement {
+    
+    position: fixed;
+    top: 10%;
+    left: 75%;
+    font-size: 1.5em;
+    text-indent: 30px;
+}
+
+#content {
+    
+    background-color: rgba(170, 232, 244, 0.67);
+    border-radius: 10px;
+    border: 5px solid rgba(21, 156, 255, 0.49);
+    
+    display: inline-block;
+    position: absolute;
+    top: 15%;
+    left: 17%;
+    margin-bottom: 100px;
+    width: 57%;
+}
+
+#menu {
+    
+    background-color: rgba(0, 55, 255, 0.2);
+    position: fixed;
+    top: 15%;
+    left: 2%;
+    height: 380px;
+    width: 185px;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#menu li {
+    
+    font-size: 1.5em !important;
+    padding: 10px 0px 10px 0px;
+    margin: 0px 0px 0px 0px;
+    margin: 5px;
+}
+
+#menu li:hover {
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+#menu li:active {
+    
+     transform: translateY(2px);
+}
+
+#currentPage {
+    
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(0, 55, 255, 0.28);
+}
+
+#info {
+    
+    font-size: 1.5em;
+    font-family: sans-serif;
+    border-bottom: 5px solid rgba(21, 156, 255, 0.49);
+}
+
+.preview {
+    
+    padding: 10px 15px 25px 10px;
+}
+
+.product {
+    
+    font-style: italic;
+    text-align: left;
+    font-size: 1.3em; 
+    padding: 10px 0px 20px 0px;
+}
+
+.dName {
+    
+    vertical-align: top;
+    padding-bottom: 20px;
+    position: absolute;
+    height: 35px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow:
+    -1px -1px 0 #ffffff,
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
+}
+
+.description {
+
+    font-family: serif;
+    font-size: 18px;
+    width: 500px;
+    padding: 35px 15px 20px 20px;
+}
+
+.price {
+    
+    text-align: right;
+    font-size: 22px;
+    width: 100px;
+}
+
+.quantity {
+    
+    line-height: 5px;
+    width: 150px;
+    margin: 0px;
+}
+
+.num {
+    
+    margin: 71px 20px 15px 0px;
+    line-height: 10px;
+    width: 70px;
+    font-size: 16px;
+}
+
+#checkoutHeader {
+    
+    padding: 10px 0px 0px 30px;
+    font-style: italic;
+    font-size: 3.5em;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: darkblue;
+    text-decoration: underline;
+     text-shadow:
+    -1px -1px 0 #ffffff,
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
+}
+
+#total {
+    
+    margin: -20px 0px 0px 30px;
+    font-style: italic;
+    font-size: 4em;
+    width: 100%
+}
+
+#amount {
+    
+    color: white;
+    background-color: rgba(0, 49, 255, 0.56);
+    padding: 10px;
+    margin: 5px;
+}
+
+.userInfoHeader {
+    
+    font-size: .4em;
+    margin: 0px 0px 0px 0px;
+    font-style: normal;
+}

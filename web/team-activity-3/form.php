@@ -29,14 +29,11 @@
         </form>
         
         <?php
-            //$name = "";
-            $name = $_POST["name"];
-            $email = $_POST["email"];
-            $major = $_POST["major"];
-            $comments = $_POST["comments"];
-            $countries = $_POST["countries"];
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $major = $_POST["comments"];
+        $countries = $_POST["countries"];
         
-            
             echo "<h2>Your Profile</h2><br>$name<br>$email<br>$major<br>$comments<br>";
         
             foreach ($countries as $country=>$value) {
