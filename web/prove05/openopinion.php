@@ -8,6 +8,9 @@ session_start();
         <link rel="stylesheet" type="text/css" href="openopinion.css">
     </head>
     <body>
-        <h1 id="header">Hello Open Opinion!</h1>
+        <div id="header">
+            <h1>Hello Open Opinion!</h1>
+        </div>
+        
     </body>
 </html>
