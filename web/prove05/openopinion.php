@@ -7,7 +7,7 @@ $host = 'ec2-54-235-240-126.compute-1.amazonaws.com';
 $dbname = 'd9odltre339tgq';
 
 try {
-    $myDatabase = new PDO("pgsql:host=".$host."; dbname=".$dbname, $user, $pass);
+    $myDatabase = new PDO("pgsql:host=".$host."; dbname=".$dbname, $user, $password);
     $myDatabase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "connected successfully";
 }
