@@ -37,7 +37,7 @@ catch(PDOException $e)
         
         foreach ($myDatabase->query('SELECT * FROM public.opinion_post;') as $row)
         {
-            echo $row;
+            echo $row['post_title'];
         }
         
         ?>
