@@ -5,6 +5,7 @@ session_start();
 <html>
     <head>
         <title>Open Opinion</title>
+        <link rel="stylesheet" type="text/css" href="openopinion.css">
     </head>
     <body>
         <h1>Hello Open Opinion!</h1>
