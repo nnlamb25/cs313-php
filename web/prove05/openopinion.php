@@ -29,6 +29,8 @@ $user = 'bruigbiqkmqflz';
         {
             echo $row['username'];
         }
+        
+        ?>
 
         
     </body>
