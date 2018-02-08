@@ -34,7 +34,12 @@ catch(PDOException $e)
         </div>
         
         <?php
-        echo $host;
+        
+        foreach ($myDatabase->query('SELECT * FROM public.opinion_post;') as $row)
+        {
+            echo $row;
+        }
+        
         ?>
 
         
