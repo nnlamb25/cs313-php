@@ -24,7 +24,9 @@ $dbname = 'd9odltre339tgq';
             <h1>Open Opinion</h1>
         </div>
         
-        
+        <?php
+        echo $host;
+        ?>
 
         
     </body>
