@@ -52,6 +52,10 @@ body {
 }
 
 .commenter {
-    font-size: 8px;
+    font-size: 9px;
     font-style: italic;
+}
+
+.comment_text {
+    padding: 5px;
 }
