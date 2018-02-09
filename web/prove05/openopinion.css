@@ -31,3 +31,21 @@ body {
     margin: 10px 0px 30px 20px;
     font-family: sans-serif;
 }
+
+#comments {
+    width: 70%;
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.comment {
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.reply {
+    margin-left: 5px;
+    border: 1px solid black;
+}
