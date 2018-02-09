@@ -44,10 +44,10 @@ $postID = $_GET['id'];
             foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment='NULL';") as $comment))
             {
                 echo '<div class="comment">' . $comment['comment_text'];
-                foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment='" . $comment['id'] . "';") as $reply)
-                {
-                    echo '<div class="comment">' . $reply['comment_text'] . '</div>';
-                }
+                //foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment='" . $comment['id'] . "';") as $reply)
+                //{
+                //    echo '<div class="comment">' . $reply['comment_text'] . '</div>';
+                //}
                 echo '</div>';
             }
             echo '</div>';
