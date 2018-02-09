@@ -30,6 +30,10 @@ body {
     margin-left: 20px;
 }
 
+#search_button {
+    font-size: 13px;
+}
+
 #post_title {
     font-size: 15px;
     font-family: sans-serif;

@@ -29,8 +29,8 @@ catch(PDOException $e)
         
         <form id="search" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"method="post">
         
-            Search: <input width="300px" type="text" name="postSearch" placeholder="Search for a Post">
-            <input type="submit" name="search" value="Search">
+            <input id="search_btn" type="submit" name="search" value="Search"> <input size="40" type="text" name="postSearch" placeholder="Search for a Post">
+            
         </form>
         
         <?php
