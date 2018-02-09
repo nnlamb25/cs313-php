@@ -9,7 +9,6 @@ $dbname = 'd9odltre339tgq';
 try {
     $myDatabase = new PDO("pgsql:host=".$host."; dbname=".$dbname, $user, $password);
     $myDatabase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "connected successfully";
 }
 catch(PDOException $e)
 {
@@ -37,7 +36,9 @@ catch(PDOException $e)
         
         foreach ($myDatabase->query('SELECT * FROM public.opinion_post;') as $row)
         {
-            echo $row['post_title'];
+            echo '<a href="opinionpost.php?id="' . $row['id']. '">' . $row['post_title'] . '<br>';
+            //echo $row['post_title'] . '<br>';
+            
         }
         
         ?>
