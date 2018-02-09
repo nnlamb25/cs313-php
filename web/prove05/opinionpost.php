@@ -27,7 +27,7 @@ $postID = $_GET['id'];
     </head>
     <body>
         <div id="header">
-            <a href="openopinion.php"><h1>Open Opinion</h1></a>
+            <a class="link" href="openopinion.php"><h1>Open Opinion</h1></a>
         </div>
         <?php
         //$post = $myDatabase->query("SELECT post_text FROM public.opinion_post WHERE id='". $postID . "';");

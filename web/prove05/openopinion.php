@@ -31,7 +31,7 @@ catch(PDOException $e)
         
         foreach ($myDatabase->query('SELECT * FROM public.opinion_post;') as $row)
         {
-            echo '<div class="post_link"><a id="post_link" href="opinionpost.php?id=' . $row['id']. '">' . $row['post_title'] . '</div>';
+            echo '<div class="post_link"><a class="link" href="opinionpost.php?id=' . $row['id']. '">' . $row['post_title'] . '</div>';
         }
         
         ?>
