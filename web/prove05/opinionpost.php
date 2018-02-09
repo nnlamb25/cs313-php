@@ -16,29 +16,13 @@ catch(PDOException $e)
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Open Opinion</title>
+        <title>Opinion Post</title>
         <link rel="stylesheet" type="text/css" href="openopinion.css">
     </head>
     <body>
-        <div id="header">
-            <h1>Open Opinion</h1>
-        </div>
-        
-        <?php
-        
-        foreach ($myDatabase->query('SELECT * FROM public.opinion_post;') as $row)
-        {
-            echo $row['id'];
-            echo '<a href="opinionpost.php?id="' . $row['id']. '">' . $row['post_title'] . '<br>';
-            //echo $row['post_title'] . '<br>';
-            
-        }
-        
-        ?>
-
-        
+        <p>YOU MADE IT!</p>
     </body>
-</html>
