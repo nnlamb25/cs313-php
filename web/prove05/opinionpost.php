@@ -15,6 +15,11 @@ catch(PDOException $e)
     echo "Connection Failed: " . $e->getMessage();
 }
 
+if(isset($_GET['id']))
+{
+    $_SESSION['post']=$_GET['id'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,5 +29,7 @@ catch(PDOException $e)
         <link rel="stylesheet" type="text/css" href="openopinion.css">
     </head>
     <body>
-        <p>YOU MADE IT!</p>
+        <?php
+        echo 'ID = '. $_SESSION['post'];
+        ?>
     </body>
