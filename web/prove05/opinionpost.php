@@ -53,7 +53,7 @@ $postID = $_GET['id'];
                 foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id='" . $comment['id'] . "';") as $reply)
                 {
                     echo '<div class="comment">';
-                    foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='" . $comment['poster_id'] . "';") as $user)
+                    foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='" . $reply['poster_id'] . "';") as $user)
                     {
                         echo '<div class="commenter">' . $user['username'] . '</div>';
                     }

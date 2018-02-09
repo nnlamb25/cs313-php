@@ -50,3 +50,8 @@ body {
     margin-left: 5px;
     border: 1px solid black;
 }
+
+.commenter {
+    font-size: 5px;
+    font-style: italic;
+}
