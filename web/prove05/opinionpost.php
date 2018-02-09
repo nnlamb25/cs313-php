@@ -28,7 +28,7 @@ $postID = $_GET['id'];
     <body>
         <?php
         echo "POST TEXT - " . $postID . "<br>";
-        $post = $myDatabase->query("SELECT post_text FROM public.opinion_post WHERE id='". $postID . "';");
+        $post = $myDatabase->query("SELECT post_text FROM public.opinion_post;");// WHERE id='". $postID . "';");
         echo $post;
         ?>
     </body>
