@@ -15,6 +15,8 @@ catch(PDOException $e)
     echo "Connection Failed: " . $e->getMessage();
 }
 
+$postID = $_GET['id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +27,8 @@ catch(PDOException $e)
     </head>
     <body>
         <?php
-        $post = $myDatabase->query('SELECT post_text FROM public.opinion_post WHERE id=' . $_GET['id'] .';');
+        echo "POST TEXT<br>";
+        $post = $myDatabase->query('SELECT post_text FROM public.opinion_post WHERE id=$postID;');
         echo $post;
         ?>
     </body>
