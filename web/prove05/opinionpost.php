@@ -52,12 +52,12 @@ $postID = $_GET['id'];
                 
                 foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id='" . $comment['id'] . "';") as $reply)
                 {
-                    echo '<div class="comment">';
+                    echo '<div class="comment, reply">';
                     foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='" . $reply['poster_id'] . "';") as $user)
                     {
                         echo '<div class="commenter">' . $user['username'] . '</div>';
                     }
-                    echo '<div class="reply comment_text">' . $reply['comment_text'] . '</div></div>';
+                    echo '<div class="comment_text">' . $reply['comment_text'] . '</div></div>';
                 }
                 echo '</div><br>';
             }
