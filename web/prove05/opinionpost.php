@@ -27,11 +27,14 @@ $postID = $_GET['id'];
     </head>
     <body>
         <?php
-        echo "POST TEXT - " . $postID . "<br>";
         //$post = $myDatabase->query("SELECT post_text FROM public.opinion_post WHERE id='". $postID . "';");
         foreach ($myDatabase->query("SELECT * FROM public.opinion_post WHERE id='". $postID . "';") as $post)
         {
-            echo $post['post_text'];
+            echo $post['post_text'] . " - ";
+            foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='". $post['poster_id'] . "';") as $user)
+            {
+                echo $user['username'];
+            }
         }
         ?>
     </body>
