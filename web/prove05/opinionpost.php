@@ -59,7 +59,7 @@ $postID = $_GET['id'];
                     }
                     echo '<div class="comment_text">' . $reply['comment_text'] . '</div></div>';
                 }
-                echo '</div></div><br>';
+                echo '</div><br>';
             }
             echo '</div>';
         }
