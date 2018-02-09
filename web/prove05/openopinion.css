@@ -26,6 +26,10 @@ body {
     font-weight: bold;
 }
 
+#search {
+    margin-left: 20px;
+}
+
 #post_title {
     font-size: 15px;
     font-family: sans-serif;

@@ -27,10 +27,11 @@ catch(PDOException $e)
             <h1>Open Opinion</h1>
         </div>
         
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"method="post">
+        <form id="search" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"method="post">
         
-            Search Post: <input type="text" name="postSearch" placeholder="Search for a Post">
-            Search <input type="submit" name="search" value="Search">
+            Search: <input width="100px" type="text" name="postSearch" placeholder="Search for a Post">
+            <br>
+            <input type="submit" name="search" value="Search">
         </form>
         
         <?php
