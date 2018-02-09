@@ -41,13 +41,13 @@ $postID = $_GET['id'];
             }
             
             echo '<div id="comments">';
-            foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] ."' AND reply_to_comment_id IS NULL;") as $comment)//"SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id='7';") as $comment))
+            foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id IS NULL;") as $comment)
             {
                 echo '<div class="comment">' . $comment['comment_text'];
-                //foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment='" . $comment['id'] . "';") as $reply)
-                //{
-                //    echo '<div class="comment">' . $reply['comment_text'] . '</div>';
-                //}
+                foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment='" . $comment['id'] . "';") as $reply)
+                {
+                    echo '<div class="comment">' . $reply['comment_text'] . '</div>';
+                }
                 echo '</div>';
             }
             echo '</div>';
