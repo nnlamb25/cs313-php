@@ -6,6 +6,11 @@ body {
 #header {
     background-color: #67d0ff;
     margin: 0px 0px 10px 0px;
-    padding: 10px 20px;
+    padding: 5px 25px;
     
+}
+
+#post_title {
+    font-size: 25px;
+    font-family: sans-serif;
 }

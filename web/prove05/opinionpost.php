@@ -26,11 +26,15 @@ $postID = $_GET['id'];
         <link rel="stylesheet" type="text/css" href="openopinion.css">
     </head>
     <body>
+        <div id="header">
+            <h1>Open Opinion</h1>
+        </div>
         <?php
         //$post = $myDatabase->query("SELECT post_text FROM public.opinion_post WHERE id='". $postID . "';");
         foreach ($myDatabase->query("SELECT * FROM public.opinion_post WHERE id='". $postID . "';") as $post)
         {
-            echo $post['post_text'] . " - ";
+            echo '<div id="post_title"><h2>' . $post['post_title'] . '</h2></div>';
+            echo 'div id="post"><p>' . $post['post_text'] . '</p></div>';
             foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='". $post['poster_id'] . "';") as $user)
             {
                 echo $user['username'];
