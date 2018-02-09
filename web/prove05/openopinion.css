@@ -25,10 +25,10 @@ body {
     font-family: sans-serif;
     margin-left: 20px;
     border: 1px solid black;
-    padding: 5px;
+    padding: 10px;
 }
 
 #post_submitter {
-    margin-left: 20px;
+    margin: 10px 0px 0px 20px;
     font-family: sans-serif;
 }
