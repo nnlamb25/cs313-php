@@ -43,10 +43,21 @@ $postID = $_GET['id'];
             echo '<div id="comments">';
             foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id IS NULL;") as $comment)
             {
-                echo '<div class="comment">' . $comment['comment_text'];
+                echo '<div class="comment">';
+                foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='" . $comment['poster_id'] . "';") as $user)
+                {
+                    echo '<div class="commenter">' . $user['username'] . '</div>';
+                }
+                echo '<div class="comment_text">' . $comment['comment_text'] . '</div></div>';
+                
                 foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id='" . $comment['id'] . "';") as $reply)
                 {
-                    echo '<div class="comment reply">' . $reply['comment_text'] . '</div>';
+                    echo '<div class="comment">';
+                    foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='" . $comment['poster_id'] . "';") as $user)
+                    {
+                        echo '<div class="commenter">' . $user['username'] . '</div>';
+                    }
+                    echo '<div class="reply comment_text">' . $reply['comment_text'] . '</div></div>';
                 }
                 echo '</div><br>';
             }
