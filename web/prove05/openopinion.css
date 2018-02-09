@@ -9,6 +9,7 @@ body {
     padding: 5px 25px;
     text-decoration: none;
     color: black;
+    font-style:italic;
 }
 
 #post_title {
