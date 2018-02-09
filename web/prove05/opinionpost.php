@@ -15,11 +15,6 @@ catch(PDOException $e)
     echo "Connection Failed: " . $e->getMessage();
 }
 
-if(isset($_GET['id']))
-{
-    $_SESSION['post']=$_GET['id'];
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +25,7 @@ if(isset($_GET['id']))
     </head>
     <body>
         <?php
-        echo 'ID = '. $_SESSION['post'];
+        $post = $myDatabase->query('SELECT post_text FROM public.opinion_post WHERE id=' . $_GET['id'] .';');
+        echo $post;
         ?>
     </body>
