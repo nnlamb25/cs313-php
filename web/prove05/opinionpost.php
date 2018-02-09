@@ -37,7 +37,7 @@ $postID = $_GET['id'];
             echo '<div id="post"><p>' . $post['post_text'] . '</p></div>';
             foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='". $post['poster_id'] . "';") as $user)
             {
-                echo $user['username'];
+                echo '<div id="post_submitter"><i>' . $user['username'] . '</i></div>';
             }
         }
         ?>
