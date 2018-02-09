@@ -49,7 +49,7 @@ $postID = $_GET['id'];
                     echo '<div class="commenter">' . $user['username'] . '</div>';
                 }
                 echo '<div class="comment_text">' . $comment['comment_text'] . '</div>';
-                
+                // How do I continuously nest replys?
                 foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id='" . $comment['id'] . "';") as $reply)
                 {
                     echo '<div class="comment, reply">';

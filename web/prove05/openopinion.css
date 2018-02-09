@@ -9,6 +9,14 @@ body {
     padding: 5px 25px;
 }
 
+.post_link {
+    font-size: 15px;
+    font-family: sans-serif;
+    padding: 10px;
+    margin: 10px 0px 0px 20px;
+    background-color: aliceblue;
+}
+
 #post_title {
     font-size: 15px;
     font-family: sans-serif;
@@ -52,8 +60,9 @@ body {
 }
 
 .commenter {
-    font-size: 9px;
+    font-size: 11px;
     font-style: italic;
+    padding: 3px;
 }
 
 .comment_text {
