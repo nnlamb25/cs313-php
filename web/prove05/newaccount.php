@@ -34,13 +34,12 @@ catch(PDOException $e)
         </form>
         
         <?php 
-        
+        echo '<h1>PLEASE JUST WORK</h1>';
         $statement = $myDatabase->prepare("SELECT username FROM public.user WHERE 'username' = :username");
         $statement->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
         $statement->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
         $statement->execute();
         $row = $statement->fetch(PDO::FETCH_ASSOC);
-        echo 'TEST';
         if (! $row)
         {
             $query = 'INSERT INTO public.user(username, password, is_mod, date_registered)
