@@ -34,7 +34,26 @@ catch(PDOException $e)
         </form>
         
         <?php 
-        echo '<h1>'. $_POST['username'] . '</h1>';
+        $userQuery = "SELECT * FROM public.user WHERE username = :username;";
+        $statement = $myDatabase->prepare($userQuery);
+        $statement->execute(array':user' => htmlspecialchars($_POST['username']));
+        if (!!$statement->fetch(PDO::FETCH_ASSOC);)
+        {
+            $message = "Username already exists.  Enter a unique username.";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+        else
+        {
+            $query = 'INSERT INTO public.user(username, password, is_mod, date_registered)
+            VALUES(:username, :password, false, NOW())';
+            $stmt = $myDatabase->prepare($query);
+            $stmt->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
+            $stmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
+            $stmt->execute();
+            echo "<script>window.location = 'openopinion.php' </script>";
+        }
+        
+        /*
         $statement = $myDatabase->prepare("SELECT username FROM public.user WHERE 'username' = :username");
         $statement->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
         $statement->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
@@ -55,7 +74,7 @@ catch(PDOException $e)
             $message = "Username already exists.  Enter a unique username.";
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
-        
+        */
         
         ?>
         
