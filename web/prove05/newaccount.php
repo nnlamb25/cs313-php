@@ -34,7 +34,7 @@ catch(PDOException $e)
         </form>
         
         <?php 
-        echo '<h1>PLEASE JUST WORK</h1>';
+        echo '<h1>'. $_POST['username'] . '</h1>';
         $statement = $myDatabase->prepare("SELECT username FROM public.user WHERE 'username' = :username");
         $statement->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
         $statement->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
