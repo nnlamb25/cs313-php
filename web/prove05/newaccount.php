@@ -40,11 +40,13 @@ catch(PDOException $e)
         $statement->execute(array(':user' => htmlspecialchars($_POST['username'])));
         if (!!$statement->fetch(PDO::FETCH_ASSOC))
         {
+            echo '<h1>INSIDE THE IF</h1>';
             $message = "Username already exists.  Enter a unique username.";
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
         else
         {
+            echo '<h1>INSIDE THE ELSE</h1>';
             $query = 'INSERT INTO public.user(username, password, is_mod, date_registered)
             VALUES(:username, :password, false, NOW())';
             $stmt = $myDatabase->prepare($query);
