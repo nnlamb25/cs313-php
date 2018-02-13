@@ -27,10 +27,12 @@ catch(PDOException $e)
             <a class="link" href="openopinion.php"><h1>Open Opinion</h1></a>
             <a href="login.php">Login</a>
         </div>
-        <form method="post" action="addaccount.php">
-            <input type="text" size="25" name="username" value="" placeholder="Enter a unique username"><br><br>
-            <input type="text" size="25" name="password" value="" placeholder="Enter a password"><br><br>
-            <input type="submit" name="" value="submit">
-        </form>
+        <div id="enter_info">
+            <form method="post" action="addaccount.php">
+                <input type="text" size="25" name="username" value="" placeholder="Enter a unique username"><br><br>
+                <input type="text" size="25" name="password" value="" placeholder="Enter a password"><br><br>
+                <input type="submit" name="" value="submit">
+            </form>
+        </div>
     </body>
 </html>
