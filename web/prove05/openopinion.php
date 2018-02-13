@@ -25,6 +25,8 @@ catch(PDOException $e)
     <body>
         <div id="header">
             <h1>Open Opinion</h1>
+            <br>
+            <button>Login</button>
         </div>
         
         <form id="search" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"method="post">
