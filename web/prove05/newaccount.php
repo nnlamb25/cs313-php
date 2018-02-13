@@ -68,7 +68,7 @@ catch(PDOException $e)
                 echo '<h1>1</h1><br>';
                 $createUserStmt = $myDatabase->prepare($createUser);
                 echo '<h1>2</h1><br>';
-                $createUserStmt->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
+                $createUserStmt->bindValue(':username', $_POST['username']);
                 echo '<h1>3</h1><br>';
                 $createUserStmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
                 echo '<h1>4</h1><br>';
@@ -79,7 +79,7 @@ catch(PDOException $e)
                 
                 $access = 'GRANT SELECT, INSERT, UPDATE ON public.opinion_post, public.post_comment TO :username';
                 $accessStmt = $myDatabase->prepare($access);
-                $accessStmt->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
+                $accessStmt->bindValue(':username', $_POST['username']);
                 $accessStmt->execute();
                 
                 echo '<h1>MADE IT TO THE END</h1><br>';
