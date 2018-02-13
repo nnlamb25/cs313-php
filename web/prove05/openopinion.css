@@ -66,8 +66,11 @@ body {
 }
 
 #enter_info {
-    text-align: center;
-    margin: auto;
+    position: fixed;
+    margin-top: -50px;
+    margin-left: -50px;
+    top: 50%;
+    left: 50%;
 }
 
 .comment {
