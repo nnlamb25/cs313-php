@@ -38,32 +38,5 @@ catch(PDOException $e)
             
             ?>
         </div>
-        
-        <form id="search" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"method="post">
-        
-            <input id="search_btn" type="submit" name="search" value="Search"> <input size="40" type="text" name="postSearch" placeholder="Search for a Post">
-            
-        </form>
-        
-        <?php
-        
-        if(isset($_POST["postSearch"]))
-        {
-            foreach ($myDatabase->query("SELECT * FROM public.opinion_post WHERE post_title like '%". $_POST["postSearch"] . "%';") as $row)
-            {
-                echo '<div class="post_link"><a class="link" href="opinionpost.php?id=' . $row['id']. '">' . $row['post_title'] . '</div>';
-            }
-        }
-        else
-        {
-            foreach ($myDatabase->query('SELECT * FROM public.opinion_post;') as $row)
-            {
-                echo '<div class="post_link"><a class="link" href="opinionpost.php?id=' . $row['id']. '">' . $row['post_title'] . '</div>';
-            }
-        }
-        
-        ?>
-
-        
     </body>
 </html>
