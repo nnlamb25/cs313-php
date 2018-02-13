@@ -62,17 +62,23 @@ catch(PDOException $e)
                 $stmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
                 $stmt->execute();
                 
+                echo '<h1>MADE IT THIS FAR</h1><br>';
+                
                 $createUser = 'CREATE USER :username WITH PASSWORD ":password"';
                 $createUserStmt = $myDatabase->prepare($createUser);
                 $createUserStmt->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
                 $createUserStmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
                 $createUserStmt->execute();
                 
+                echo '<h1>NOW WE ARE THIS FAR</h1><br>';
+                
+                
                 $access = 'GRANT SELECT, INSERT, UPDATE ON public.opinion_post, public.post_comment TO :username';
                 $accessStmt = $myDatabase->prepare($access);
                 $accessStmt->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
-                $accessStmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
                 $accessStmt->execute();
+                
+                echo '<h1>MADE IT TO THE END</h1><br>';
                 
                 echo "<script>window.location = 'openopinion.php' </script>";
             }
