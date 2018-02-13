@@ -35,7 +35,7 @@ catch(PDOException $e)
         
         <?php 
         
-        $enteredUserName = htmlspecialchar($_POST['username']);
+        $enteredUserName = htmlspecialchars($_POST['username']);
         $userExists = false;
         
         foreach ($myDatabase->query("SELECT * FROM public.user") as $user)
