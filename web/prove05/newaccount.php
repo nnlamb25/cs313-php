@@ -30,7 +30,7 @@ catch(PDOException $e)
         <div id="enter_info">
             <form method="post" action="addaccount.php">
                 <input type="text" name="username" value="" placeholder="Enter a unique username"><br>
-                <input type="text" name="password" value="" placeholder="Enter a password">
+                <input type="text" name="password" value="" placeholder="Enter a password"><br>
                 <input type="submit" name="" value="submit">
             </form>
         </div>
