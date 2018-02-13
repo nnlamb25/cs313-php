@@ -25,18 +25,7 @@ catch(PDOException $e)
     <body>
         <div id="header">
             <a class="link" href="openopinion.php"><h1>Open Opinion</h1></a>
-            <?php
-            
-            if($user == 'bruigbiqkmqflz')
-            {
-                echo '<a href="login.php">Login</a> • <a href="newaccount.php">Create an Account</a>';
-            }
-            else
-            {
-                echo $user;
-            }
-            
-            ?>
+            <a href="newaccount.php">Create an Account</a>';
         </div>
     </body>
 </html>

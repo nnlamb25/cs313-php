@@ -65,6 +65,10 @@ body {
     padding: 10px;
 }
 
+#enter_info {
+    text-align: center;
+}
+
 .comment {
     margin: 5px;
     padding: 3px;
