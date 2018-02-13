@@ -29,7 +29,7 @@ catch(PDOException $e)
             
             if($user == 'bruigbiqkmqflz')
             {
-                echo '<a href="login.php">Login</a><br><a href="newaccount.php">Create an Account</a>';
+                echo '<a href="login.php">Login</a> • <a href="newaccount.php">Create an Account</a>';
             }
             else
             {
