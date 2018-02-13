@@ -65,18 +65,6 @@ body {
     padding: 10px;
 }
 
-#enter_info_wrapper {
-    position: fixed;
-    margin-top: -50px;
-    margin-left: -50px;
-    top: 50%;
-    left: 50%;
-}
-
-#enter_info {
-    width: 100%;
-}
-
 .comment {
     margin: 5px;
     padding: 3px;
