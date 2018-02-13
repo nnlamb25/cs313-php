@@ -34,7 +34,7 @@ catch(PDOException $e)
         </form>
         
         <?php 
-        if (isset($_POST['username']))
+        if (isset($_POST['username']) && $_POST['username'] != '')
         {
             $enteredUserName = htmlspecialchars($_POST['username']);
             $userExists = false;
