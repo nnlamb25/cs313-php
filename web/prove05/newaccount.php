@@ -29,9 +29,9 @@ catch(PDOException $e)
         </div>
         <div id="enter_info">
             <form method="post" action="addaccount.php">
-                <input type="text" size="25" name="username" value="" placeholder="Enter a unique username"><br><br>
-                <input type="text" size="25" name="password" value="" placeholder="Enter a password"><br><br>
-                <input type="submit" name="" value="submit">
+                <input type="text" size="25" name="username" value="" placeholder="Enter a unique username" style="font-size: 18px; margin: 15px 0px 0px 30px;"><br><br>
+                <input type="text" size="25" name="password" value="" placeholder="Enter a password" style="font-size: 18px; margin-left: 30px;"><br><br>
+                <input type="submit" name="" value="submit" style="margin-left: 30px;">
             </form>
         </div>
     </body>
