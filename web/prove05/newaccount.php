@@ -64,7 +64,7 @@ catch(PDOException $e)
                 
                 echo '<h1>MADE IT THIS FAR</h1><br>';
                 
-                $createUser = 'CREATE USER :username WITH PASSWORD ":password"';
+                $createUser = 'CREATE USER :username WITH PASSWORD :password';
                 echo '<h1>1</h1><br>';
                 $createUserStmt = $myDatabase->prepare($createUser);
                 echo '<h1>2</h1><br>';
