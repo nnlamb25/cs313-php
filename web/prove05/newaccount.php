@@ -56,7 +56,7 @@ catch(PDOException $e)
             $message = "Username already exists.  Enter a unique username.";
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
-}
+        
         
         ?>
         
