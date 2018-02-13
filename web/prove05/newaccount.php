@@ -40,7 +40,7 @@ catch(PDOException $e)
         $statement->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
         $statement->execute();
         $row = $statement->fetch(PDO::FETCH_ASSOC);
-        
+        echo 'TEST';
         if (! $row)
         {
             $query = 'INSERT INTO public.user(username, password, is_mod, date_registered)
