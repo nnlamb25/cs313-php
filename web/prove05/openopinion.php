@@ -25,7 +25,6 @@ catch(PDOException $e)
     <body>
         <div id="header">
             <h1>Open Opinion</h1>
-            <br>
             <button>Login</button>
         </div>
         
