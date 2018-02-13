@@ -34,10 +34,11 @@ catch(PDOException $e)
         </form>
         
         <?php 
+        
         $userQuery = "SELECT * FROM public.user WHERE username = :username;";
         $statement = $myDatabase->prepare($userQuery);
-        $statement->execute(array':user' => htmlspecialchars($_POST['username']));
-        if (!!$statement->fetch(PDO::FETCH_ASSOC);)
+        $statement->execute(array(':user' => htmlspecialchars($_POST['username'])));
+        if (!!$statement->fetch(PDO::FETCH_ASSOC))
         {
             $message = "Username already exists.  Enter a unique username.";
             echo "<script type='text/javascript'>alert('$message');</script>";
