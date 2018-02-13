@@ -42,12 +42,6 @@ catch(PDOException $e)
         $row = $statement->fetch(PDO::FETCH_ASSOC);
         
         if (! $row)
-
-        {
-            $message = "Username already exists.  Enter a unique username.";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-        }
-        else
         {
             $query = 'INSERT INTO public.user(username, password, is_mod, date_registered)
             VALUES(:username, :password, false, NOW())';
@@ -56,6 +50,11 @@ catch(PDOException $e)
             $stmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
             $stmt->execute();
             echo "<script>window.location = 'openopinion.php' </script>";
+        }
+        else
+        {   
+            $message = "Username already exists.  Enter a unique username.";
+            echo "<script type='text/javascript'>alert('$message');</script>";
         }
 }
         
