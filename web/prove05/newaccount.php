@@ -42,7 +42,7 @@ catch(PDOException $e)
         {
             if ($user['username'] == $enteredUserName)
             {
-                userExists = true;
+                $userExists = true;
                 break;
             }
         }
