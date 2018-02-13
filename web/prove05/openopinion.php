@@ -25,7 +25,18 @@ catch(PDOException $e)
     <body>
         <div id="header">
             <h1>Open Opinion</h1>
-            <button>Login</button>
+            <?php
+            
+            if($user == 'bruigbiqkmqflz')
+            {
+                echo '<button>Login</button> <button>Create Account</button>';
+            }
+            else
+            {
+                echo $user;
+            }
+            
+            ?>
         </div>
         
         <form id="search" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"method="post">
