@@ -55,7 +55,7 @@ catch(PDOException $e)
             $stmt->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
             $stmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
             $stmt->execute();
-            echo "<script>window.location = 'openopinion.php' </script>"
+            echo "<script>window.location = 'openopinion.php' </script>";
         }
 }
         
