@@ -34,80 +34,36 @@ catch(PDOException $e)
         </form>
         
         <?php 
-        
-        $enteredUserName = htmlspecialchars($_POST['username']);
-        $userExists = false;
-        
-        foreach ($myDatabase->query("SELECT * FROM public.user") as $user)
+        if (isset($_POST['username']))
         {
-            if ($user['username'] == $enteredUserName)
+            $enteredUserName = htmlspecialchars($_POST['username']);
+            $userExists = false;
+
+            foreach ($myDatabase->query("SELECT * FROM public.user") as $user)
             {
-                $userExists = true;
-                break;
+                if ($user['username'] == $enteredUserName)
+                {
+                    $userExists = true;
+                    break;
+                }
+            }
+
+            if ($userExists)
+            {
+                $message = "Username already exists.  Enter a unique username.";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+            }
+            else
+            {
+                $query = 'INSERT INTO public.user(username, password, is_mod, date_registered)
+                VALUES(:username, :password, false, NOW())';
+                $stmt = $myDatabase->prepare($query);
+                $stmt->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
+                $stmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
+                $stmt->execute();
+                echo "<script>window.location = 'openopinion.php' </script>";
             }
         }
-        
-        if ($userExists)
-        {
-            $message = "Username already exists.  Enter a unique username.";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-        }
-        else
-        {
-            $query = 'INSERT INTO public.user(username, password, is_mod, date_registered)
-            VALUES(:username, :password, false, NOW())';
-            $stmt = $myDatabase->prepare($query);
-            $stmt->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
-            $stmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
-            $stmt->execute();
-            echo "<script>window.location = 'openopinion.php' </script>";
-        }
-        
-        /*
-        $userQuery = "SELECT * FROM public.user WHERE username = :username;";
-        $statement = $myDatabase->prepare($userQuery);
-        $statement->execute(array(':user' => htmlspecialchars($_POST['username'])));
-        if (!!$statement->fetch(PDO::FETCH_ASSOC))
-        {
-            echo '<h1>INSIDE THE IF</h1>';
-            $message = "Username already exists.  Enter a unique username.";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-        }
-        else
-        {
-            echo '<h1>INSIDE THE ELSE</h1>';
-            $query = 'INSERT INTO public.user(username, password, is_mod, date_registered)
-            VALUES(:username, :password, false, NOW())';
-            $stmt = $myDatabase->prepare($query);
-            $stmt->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
-            $stmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
-            $stmt->execute();
-            echo "<script>window.location = 'openopinion.php' </script>";
-        }
-        */
-        /*
-        $statement = $myDatabase->prepare("SELECT username FROM public.user WHERE 'username' = :username");
-        $statement->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
-        $statement->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
-        $statement->execute();
-        $row = $statement->fetch(PDO::FETCH_ASSOC);
-        if (! $row)
-        {
-            $query = 'INSERT INTO public.user(username, password, is_mod, date_registered)
-            VALUES(:username, :password, false, NOW())';
-            $stmt = $myDatabase->prepare($query);
-            $stmt->bindValue(':username', $_POST['username'], PDO::PARAM_STR);
-            $stmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
-            $stmt->execute();
-            echo "<script>window.location = 'openopinion.php' </script>";
-        }
-        else
-        {   
-            $message = "Username already exists.  Enter a unique username.";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-        }
-        */
-        
         ?>
         
     </body>
