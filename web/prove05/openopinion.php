@@ -27,7 +27,7 @@ catch(PDOException $e)
             <h1>Open Opinion</h1>
             <?php
             
-            if(isset($_POST['username']));
+            if(isset($_POST['username']))
             {
                 echo $_POST['username'];
             }
