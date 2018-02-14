@@ -52,5 +52,50 @@ $postID = $_GET['id'];
             }
         }
         ?>
+        
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <textarea rows="10" cols="70" name="reply" value="" placeholder="Enter your reply" style="font-size: 14px; margin-left: 30px;width: 70%"></textarea><br><br>
+            <input type="submit" name="" value="submit" style="margin-left: 30px;font-size: 18px;">
+        </form>
+        
+        <?php
+        
+        if (isset($_POST['reply']) && $_POST['reply'] != '')
+        {
+            $postReply = htmlspecialchars($_POST['reply']);
+            
+            foreach ($myDatabase->query("SELECT * FROM public.user") as $user)
+            {
+                if ($user['username'] == $_SESSION['username'])
+                {
+                    $userid = $user['id'];
+                    break;
+                }
+            }
+            
+            $query = 'INSERT INTO public.post_comment(post_id, poster_id, votes_agree, votes_disagree, changed_minds, comment_text, date_commented)
+            VALUES (:postid, :posterid, 1, 0, 0, :text, NOW())';
+            $stmt = $myDatabase->prepare($query);
+            $stmt->bindValue(':postid', $postID, PDO::PARAM_INT);
+            $stmt->bindValue(':posterid', $userid, PDO::PARAM_STR);
+            $stmt->bindValue(':text', $postReply, PDO::PARAM_STR);
+            $stmt->execute();
+            echo "<script>window.location = 'opinionpost.php?id=" . $row['id']. "' </script>";
+        }
+        
+        /*
+        id SERIAL NOT NULL PRIMARY KEY,
+    post_id INT NOT NULL REFERENCES public.opinion_post(id),
+    poster_id INT NOT NULL REFERENCES public.user(id),
+    votes_agree INT NOT NULL,
+    votes_disagree INT NOT NULL,
+    changed_minds INT NOT NULL,
+    reply_to_comment_id INT REFERENCES public.post_comment(id),
+    comment_text  TEXT NOT NULL,
+    date_commented DATE NOT NULL
+    */
+        
+        ?>
+        
     </body>
 </html>
