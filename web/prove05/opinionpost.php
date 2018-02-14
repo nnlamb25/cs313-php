@@ -69,7 +69,7 @@ $postID = $_GET['id'];
                 {
                     $_SESSION['postid'] = $post['id'];
                     $_SESSION['commentid'] = $comment['id'];
-                    echo '<div class="comment_text">' . $comment['comment_text'] . '<br><a style="color: black;text-decoration: none;padding: 5px;background-color: #78b0e2;border-radius: 4px;" href="commentreply.php">Reply</a></div>';
+                    echo '<div class="comment_text">' . $comment['comment_text'] . '<br><br><a style="text-size: 12px;color: black;text-decoration: none;padding: 3px;background-color: #78b0e2;border-radius: 2px;" href="commentreply.php">Reply</a></div>';
                 }
                 else
                 {
