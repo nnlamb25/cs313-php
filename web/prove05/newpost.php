@@ -7,7 +7,7 @@ $host = 'ec2-54-235-240-126.compute-1.amazonaws.com';
 $dbname = 'd9odltre339tgq';
 
 $_POST['title'] = '.';
-$_POST['post'] = '.'
+$_POST['post'] = '.';
 
 try {
     $myDatabase = new PDO("pgsql:host=".$host."; dbname=".$dbname, $user, $password);
