@@ -51,7 +51,10 @@ $postID = $_GET['id'];
                 echo '<div id="post_submitter"><i>' . $user['username'] . '</i><br><br>';
             }
             
-            echo '<a style="color: black;text-decoration: none;padding: 5px;background-color: #78b0e2;border-radius: 4px;" href="postreply.php?id=' . $post['id'] . '">Reply</a></div>';
+            if (isset($_SESSION['username']))
+            {
+                echo '<a style="color: black;text-decoration: none;padding: 5px;background-color: #78b0e2;border-radius: 4px;" href="postreply.php?id=' . $post['id'] . '">Reply</a></div>';
+            }
             
             echo '<div id="comments">';
             foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id IS NULL;") as $comment)
