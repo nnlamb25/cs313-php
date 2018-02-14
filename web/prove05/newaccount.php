@@ -77,7 +77,7 @@ catch(PDOException $e)
                 }
                 catch(PDOException $e)
                 {
-                    echo "Error creating user: " . $e->getMessage();
+                    echo "Error creating user: " . $e->getMessage() . '<br><br>';
                 }
                 
                 try
