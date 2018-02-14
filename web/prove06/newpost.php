@@ -46,7 +46,7 @@ catch(PDOException $e)
         
         <?php
         
-        if (isset($_POST['title']) $_POST['title'] != '' && isset($_POST['post']) && $_POST['post'] != '')
+        if (isset($_POST['title']) && $_POST['title'] != '' && isset($_POST['post']) && $_POST['post'] != '')
         {
             $postTitle = htmlspecialchars($_POST['title']);
             $postContent = htmlspecialchars($_POST['post']);
