@@ -29,7 +29,7 @@ catch(PDOException $e)
             
             if(isset($_SESSION['username']))
             {
-                echo $_SESSION['username'] . ' • <a href="login.php">Switch Users</a>';
+                echo $_SESSION['username'] . ' • <a href="login.php">Switch Users</a> • •  <a href="logout.php">Logout</a>';
             }
             else
             {
