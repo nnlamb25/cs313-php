@@ -43,10 +43,14 @@ catch(PDOException $e)
         
             <input id="search_btn" type="submit" name="search" value="Search"> <input size="40" type="text" name="postSearch" placeholder="Search for a Post">
             
-        </form><br>
-        <a href="newpost.php"><h3>New Post</h3></a>
+        </form>
         
         <?php
+        
+        if(isset($_SESSION['username']))
+        {
+            echo '<a href="newpost.php" class="link"><h3>New Post</h3></a>';
+        }
         
         if(isset($_POST["postSearch"]))
         {
