@@ -24,7 +24,7 @@ catch(PDOException $e)
     </head>
     <body>
         <div id="header">
-            <h1>Open Opinion</h1>
+            <a class="link" href="openopinion.php"><h1>Open Opinion</h1></a>
             <?php
             
             if(isset($_SESSION['username']))
