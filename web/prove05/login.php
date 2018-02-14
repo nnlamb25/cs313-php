@@ -25,9 +25,9 @@ catch(PDOException $e)
     <body>
         <div id="header">
             <a class="link" href="openopinion.php"><h1>Open Opinion</h1></a>
-            <a href="newaccount.php">Create an Account</a>';
+            <a href="newaccount.php">Create an Account</a>
         </div>
-        <form method="post" action="logintoaccount.php">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <input type="text" size="25" name="username" value="" placeholder="Enter username" style="font-size: 18px; margin: 15px 0px 0px 30px;"><br><br>
             <input type="text" size="25" name="password" value="" placeholder="Enter password" style="font-size: 18px; margin-left: 30px;"><br><br>
             <input type="submit" name="" value="submit" style="margin-left: 30px;">
