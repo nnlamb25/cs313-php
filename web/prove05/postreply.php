@@ -75,15 +75,15 @@ $postID = $_GET['id'];
             
             $query = 'INSERT INTO public.post_comment(post_id, poster_id, votes_agree, votes_disagree, changed_minds, comment_text, date_commented)
             VALUES (:postid, :posterid, 1, 0, 0, :text, NOW())';
-            echo '<h1>1</h1>'
+            echo '<h1>1</h1>';
             $stmt = $myDatabase->prepare($query);
-            echo '<h1>2</h1>'
+            echo '<h1>2</h1>';
             $stmt->bindValue(':postid', $postID, PDO::PARAM_INT);
-            echo '<h1>3</h1>'
+            echo '<h1>3</h1>';
             $stmt->bindValue(':posterid', $userid, PDO::PARAM_STR);
-            echo '<h1>4</h1>'
+            echo '<h1>4</h1>';
             $stmt->bindValue(':text', $postReply, PDO::PARAM_STR);
-            echo '<h1>5</h1>'
+            echo '<h1>5</h1>';
             $stmt->execute();
             
             echo '<h1>6</h1>'
