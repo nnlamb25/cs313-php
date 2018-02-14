@@ -53,7 +53,7 @@ catch(PDOException $e)
             
             foreach ($myDatabase->query("SELECT * FROM public.user") as $user)
             {
-                if $user['username'] == $_SESSION['username']
+                if ($user['username'] == $_SESSION['username'])
                 {
                     $userid = $user['id'];
                     break;
