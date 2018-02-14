@@ -107,18 +107,6 @@ $postID = $_SESSION['postid'];
             $_SESSION['commentid'] = $commentID;
         }
         
-        /*
-        id SERIAL NOT NULL PRIMARY KEY,
-    post_id INT NOT NULL REFERENCES public.opinion_post(id),
-    poster_id INT NOT NULL REFERENCES public.user(id),
-    votes_agree INT NOT NULL,
-    votes_disagree INT NOT NULL,
-    changed_minds INT NOT NULL,
-    reply_to_comment_id INT REFERENCES public.post_comment(id),
-    comment_text  TEXT NOT NULL,
-    date_commented DATE NOT NULL
-    */
-        
         ?>
         
     </body>
