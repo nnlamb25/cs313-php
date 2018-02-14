@@ -14,6 +14,8 @@ body {
     text-decoration: none;
 }
 
+/*
+This isn't working...
 .new_post_link {
     color: black;
     text-decoration: none;
@@ -21,7 +23,7 @@ body {
     padding: 5px;
     background-color: aliceblue;
     border-radius: 4px;
-}
+}*/
 
 .post_link {
     font-size: 15px;
