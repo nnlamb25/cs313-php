@@ -44,24 +44,27 @@ $commentID = $_GET['id'];
         <?php
         foreach ($myDatabase->query("SELECT * FROM public.post_comment;") as $comment)
         {
-            foreach ($myDatabase->query("SELECT * FROM public.opinion_post WHERE id='". $comment['post_id'] . "';") as $post)
+            if($comment['id'] == $commentID)
             {
-                echo '<div id="post_title"><h2>' . $post['post_title'] . '</h2></div>';
-                echo '<div id="post_wrapper"><div id="post"><p>' . $post['post_text'] . '</p></div></div>';
-                
-                foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='". $post['poster_id'] . "';") as $user)
+                foreach ($myDatabase->query("SELECT * FROM public.opinion_post WHERE id='". $comment['post_id'] . "';") as $post)
                 {
-                    echo '<div id="post_submitter"><i>' . $user['username'] . '</i><br><br>';
+                    echo '<div id="post_title"><h2>' . $post['post_title'] . '</h2></div>';
+                    echo '<div id="post_wrapper"><div id="post"><p>' . $post['post_text'] . '</p></div></div>';
+
+                    foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='". $post['poster_id'] . "';") as $user)
+                    {
+                        echo '<div id="post_submitter"><i>' . $user['username'] . '</i><br><br>';
+                    }
                 }
+
+                echo '<div class="comment">';
+                foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='" . $comment['poster_id'] . "';") as $user)
+                {
+                    echo '<div class="commenter">' . $user['username'] . '</div>';
+                }
+
+                echo '<div class="comment_text">' . $comment['comment_text'] . '</div>';
             }
-            
-            echo '<div class="comment">';
-            foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='" . $comment['poster_id'] . "';") as $user)
-            {
-                echo '<div class="commenter">' . $user['username'] . '</div>';
-            }
-                
-            echo '<div class="comment_text">' . $comment['comment_text'] . '</div>';
         }
                 
         
