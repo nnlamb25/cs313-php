@@ -94,6 +94,7 @@ $postID = $_SESSION['postid'];
             }
             
             $commentID = $_SESSION['commentid'];
+            echo '<h1>' . $commentID . '</h1>';
             
             $query = 'INSERT INTO public.post_comment(post_id, poster_id, votes_agree, votes_disagree, changed_minds, reply_to_comment_id, comment_text, date_commented)
             VALUES (:postid, :posterid, 1, 0, 0, :reply_to_comment_id, :text, NOW())';
@@ -103,7 +104,7 @@ $postID = $_SESSION['postid'];
             $stmt->bindValue(':reply_to_comment_id', $commentID, PDO::PARAM_INT);
             $stmt->bindValue(':text', $postReply, PDO::PARAM_STR);
             $stmt->execute();
-            echo "<script>window.location = 'opinionpost.php?id=$postID' </script>";
+            //echo "<script>window.location = 'opinionpost.php?id=$postID' </script>";
         }
         
         /*
