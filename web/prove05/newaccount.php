@@ -84,8 +84,11 @@ catch(PDOException $e)
                 
                 
                 $access = 'GRANT SELECT, INSERT, UPDATE ON public.opinion_post, public.post_comment TO :username';
+                echo '<h1>5</h1><br>';
                 $accessStmt = $myDatabase->prepare($access);
+                echo '<h1>6</h1><br>';
                 $accessStmt->bindValue(':username', $_POST['username']);
+                echo '<h1>7</h1><br>';
                 $accessStmt->execute();
                 
                 echo '<h1>MADE IT TO THE END</h1><br>';
