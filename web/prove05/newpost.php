@@ -33,7 +33,7 @@ catch(PDOException $e)
             }
             else
             {
-                echo "<script>window.location = 'openopinion.php' </script>";
+                echo "<script>window.location = 'login.php' </script>";
             }
             
             ?>
