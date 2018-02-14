@@ -94,6 +94,7 @@ $postID = $_SESSION['postid'];
             }
             
             $commentID = $_SESSION['commentid'];
+            echo '<h1>WELL THIS PART WORKS!!</h1>';
             echo '<h1>' . $commentID . '</h1>';
             
             $query = 'INSERT INTO public.post_comment(post_id, poster_id, votes_agree, votes_disagree, changed_minds, reply_to_comment_id, comment_text, date_commented)
