@@ -48,6 +48,7 @@ $commentID = $_GET['id'];
             {
                 foreach ($myDatabase->query("SELECT * FROM public.opinion_post WHERE id='". $comment['post_id'] . "';") as $post)
                 {
+                    $postID = $post['id'];
                     echo '<div id="post_title"><h2>' . $post['post_title'] . '</h2></div>';
                     echo '<div id="post_wrapper"><div id="post"><p>' . $post['post_text'] . '</p></div></div>';
 
@@ -64,6 +65,7 @@ $commentID = $_GET['id'];
                 }
 
                 echo '<div class="comment_text">' . $comment['comment_text'] . '</div>';
+                break;
             }
         }
                 
@@ -90,11 +92,12 @@ $commentID = $_GET['id'];
                 }
             }
             
-            $query = 'INSERT INTO public.post_comment(post_id, poster_id, votes_agree, votes_disagree, changed_minds, comment_text, date_commented)
-            VALUES (:postid, :posterid, 1, 0, 0, :text, NOW())';
+            $query = 'INSERT INTO public.post_comment(post_id, poster_id, votes_agree, votes_disagree, changed_minds, reply_to_comment_id, comment_text, date_commented)
+            VALUES (:postid, :posterid, 1, 0, 0, :reply_to_comment_id, :text, NOW())';
             $stmt = $myDatabase->prepare($query);
             $stmt->bindValue(':postid', $postID, PDO::PARAM_INT);
             $stmt->bindValue(':posterid', $userid, PDO::PARAM_STR);
+            $stmt->bindValue(':reply_to_comment_id', $commentID, PDO::PARAM_STR);
             $stmt->bindValue(':text', $postReply, PDO::PARAM_STR);
             $stmt->execute();
             echo "<script>window.location = 'opinionpost.php?id=$postID' </script>";
