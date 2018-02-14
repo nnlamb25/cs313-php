@@ -54,10 +54,10 @@ $postID = $_GET['id'];
             if (isset($_SESSION['username']))
             {
                 $_SESSION['postid'] = $post['id'];
-                echo '<a style="color: black;text-decoration: none;padding: 5px;background-color: #78b0e2;border-radius: 4px;" href="postreply.php">Reply</a></div>';
+                echo '<a style="color: black;text-decoration: none;padding: 5px;background-color: #78b0e2;border-radius: 4px;" href="postreply.php">Reply</a>';
             }
             
-            echo '<div id="comments">';
+            echo '</div><div id="comments">';
             foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id IS NULL;") as $comment)
             {
                 echo '<div class="comment">';
@@ -65,7 +65,17 @@ $postID = $_GET['id'];
                 {
                     echo '<div class="commenter">' . $user['username'] . '</div>';
                 }
-                echo '<div class="comment_text">' . $comment['comment_text'] . '</div>';
+                if (isset($_SESSION['username']))
+                {
+                    $_SESSION['postid'] = $post['id'];
+                    $_SESSION['commentid'] = $comment['id'];
+                    echo '<div class="comment_text">' . $comment['comment_text'] . '<br><a style="color: black;text-decoration: none;padding: 5px;background-color: #78b0e2;border-radius: 4px;" href="commentreply.php">Reply</a></div>';
+                }
+                else
+                {
+                    echo '<div class="comment_text">' . $comment['comment_text'] . '</div>';
+                }
+                
                 // How do I continuously nest replys?
                 foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id='" . $comment['id'] . "';") as $reply)
                 {
