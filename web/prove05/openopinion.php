@@ -27,13 +27,13 @@ catch(PDOException $e)
             <h1>Open Opinion</h1>
             <?php
             
-            if($user == 'bruigbiqkmqflz')
+            if(isset($_POST['username']));
             {
-                echo '<a href="login.php">Login</a> • <a href="newaccount.php">Create an Account</a>';
+                echo $_POST['username'];
             }
             else
             {
-                echo $user;
+                echo '<a href="login.php">Login</a> • <a href="newaccount.php">Create an Account</a>';
             }
             
             ?>
