@@ -54,7 +54,7 @@ catch(PDOException $e)
         
         if(isset($_POST["postSearch"]))
         {
-            $search = htmlspecialchars($_POST["postSearch"])
+            $search = htmlspecialchars($_POST["postSearch"]);
             foreach ($myDatabase->query("SELECT * FROM public.opinion_post WHERE post_title like '%$search%';") as $row)
             {
                 echo '<div class="post_link"><a class="link" href="opinionpost.php?id=' . $row['id']. '">' . $row['post_title'] . '</div>';
