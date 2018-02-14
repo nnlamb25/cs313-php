@@ -94,8 +94,13 @@ $postID = $_SESSION['postid'];
             }
             
             $commentID = $_SESSION['commentid'];
-            echo '<h1>WELL THIS PART WORKS!!</h1>';
-            echo '<h1>' . $commentID . '</h1>';
+            echo '<h1>WELL THIS PART WORKS!!</h1><br>';
+            echo '<h1>' . $commentID . '</h1><br>';
+            echo '<h1>WHAT ABOUT THIS?</h1><br>';
+            echo '<h1>' . $_SESSION['commentid'] . '</h1><br>';
+            echo '<h1> AND THIS?</h1><br>';
+            echo '<h1>' . $_GET['id'] . '</h1><br>';
+            echo '<h1> I HOPE SOMETHING WORKED.</h1><br>';
             
             $query = 'INSERT INTO public.post_comment(post_id, poster_id, votes_agree, votes_disagree, changed_minds, reply_to_comment_id, comment_text, date_commented)
             VALUES (:postid, :posterid, 1, 0, 0, :reply_to_comment_id, :text, NOW())';
