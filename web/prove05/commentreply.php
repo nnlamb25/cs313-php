@@ -84,6 +84,8 @@ $postID = $_SESSION['postid'];
             <textarea rows="6" cols="70" name="reply" value="" placeholder="Enter your reply" style="font-size: 14px; margin-left: 30px;width: 70%"></textarea><br><br>
             <input type="submit" name="" value="submit" style="margin-left: 30px;font-size: 18px;">
         </form>
+        
+        <?php
         echo '<h1>WELL THIS PART WORKS!!</h1><br>';
             echo '<h1>' . $commentID . '</h1><br>';
             echo '<h1>WHAT ABOUT THIS?</h1><br>';
@@ -91,7 +93,6 @@ $postID = $_SESSION['postid'];
             echo '<h1> AND THIS?</h1><br>';
             echo '<h1>' . $_GET['id'] . '</h1><br>';
             echo '<h1> I HOPE SOMETHING WORKED.</h1><br>';
-        <?php
         
         if (isset($_POST['reply']) && $_POST['reply'] != '')
         {
