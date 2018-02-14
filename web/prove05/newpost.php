@@ -72,7 +72,7 @@ catch(PDOException $e)
             $stmt->execute();
             echo "<script>window.location = 'openopinion.php' </script>";
         }
-        else if (($_POST['title'] != '.' && $_POST['title'] != '.') || $_POST['title'] == '' || $_POST['post'] != '')
+        else if (($_POST['title'] != '.' && $_POST['title'] != '.') || $_POST['title'] == '' || $_POST['post'] == '')
         {
             $message = "You must enter a title and a post!";
             echo "<script type='text/javascript'>alert('$message');</script>";
