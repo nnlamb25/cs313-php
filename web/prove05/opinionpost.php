@@ -44,6 +44,7 @@ $postID = $_GET['id'];
         <?php
         foreach ($myDatabase->query("SELECT * FROM public.opinion_post WHERE id='". $postID . "';") as $post)
         {
+            $_SESSION['postid'] = $post['id'];
             echo '<div id="post_title"><h2>' . $post['post_title'] . '</h2></div>';
             echo '<div id="post_wrapper"><div id="post"><p>' . $post['post_text'] . '</p></div></div>';
             foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='". $post['poster_id'] . "';") as $user)
@@ -53,7 +54,6 @@ $postID = $_GET['id'];
             
             if (isset($_SESSION['username']))
             {
-                $_SESSION['postid'] = $post['id'];
                 echo '<a style="color: black;text-decoration: none;padding: 5px;background-color: #78b0e2;border-radius: 4px;" href="postreply.php">Reply</a>';
             }
             

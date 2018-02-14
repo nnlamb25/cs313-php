@@ -16,6 +16,7 @@ catch(PDOException $e)
 }
 
 $commentID = $_GET['id'];
+$postID = $_SESSION['postid'];
 
 ?>
 
@@ -48,7 +49,6 @@ $commentID = $_GET['id'];
             {
                 foreach ($myDatabase->query("SELECT * FROM public.opinion_post WHERE id='". $comment['post_id'] . "';") as $post)
                 {
-                    $postID = $post['id'];
                     echo '<div id="post_title"><h2>' . $post['post_title'] . '</h2></div>';
                     echo '<div id="post_wrapper"><div id="post"><p>' . $post['post_text'] . '</p></div></div>';
 
