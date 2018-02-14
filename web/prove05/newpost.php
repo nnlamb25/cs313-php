@@ -33,14 +33,14 @@ catch(PDOException $e)
             }
             else
             {
-                echo '<a href="login.php">Login</a> • <a href="newaccount.php">Create an Account</a>';
+                echo "<script>window.location = 'openopinion.php' </script>";
             }
             
             ?>
         </div>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <input type="text" size="70%" name="title" value="" placeholder="Enter an interesting and descriptive title" style="font-size: 16px; margin: 15px 0px 0px 30px;"><br><br>
-            <textarea rows="10" size="70%" name="post" value="" placeholder="Enter post description" style="font-size: 14px; margin-left: 30px;"></textarea><br><br>
+            <input type="text" size="70" name="title" value="" placeholder="Enter an interesting and descriptive title" style="font-size: 16px; margin: 15px 0px 0px 30px;width: 70%"><br><br>
+            <textarea rows="10" cols="70" name="post" value="" placeholder="Enter post description" style="font-size: 14px; margin-left: 30px;width: 70%"></textarea><br><br>
             <input type="submit" name="" value="submit" style="margin-left: 30px;font-size: 18px;">
         </form>
     </body>
