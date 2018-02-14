@@ -49,7 +49,7 @@ catch(PDOException $e)
         
         if(isset($_SESSION['username']))
         {
-            echo '<a href="newpost.php" class="new_post_link"><h3>New Post</h3></a>';
+            echo '<a href="newpost.php" class="new_post_link">New Post</a>';
         }
         
         if(isset($_POST["postSearch"]))
