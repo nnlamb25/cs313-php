@@ -32,5 +32,33 @@ catch(PDOException $e)
             <input type="text" size="25" name="password" value="" placeholder="Enter password" style="font-size: 18px; margin-left: 30px;"><br><br>
             <input type="submit" name="" value="submit" style="margin-left: 30px;">
         </form>
+        <?php 
+        if (isset($_POST['username']) && $_POST['username'] != '')
+        {
+            $enteredUserName = htmlspecialchars($_POST['username']);
+            $enteredPassword = htmlspecialchars($_POST['password']);
+            $userExists = false;
+
+            foreach ($myDatabase->query("SELECT * FROM public.user") as $user)
+            {
+                if ($user['username'] == $enteredUserName && $user['password'] == $enteredPassword)
+                {
+                    $userExists = true;
+                    break;
+                }
+            }
+
+            if ($userExists)
+            {
+                $_SESSION['username'] = $enteredUserName;
+                echo "<script>window.location = 'openopinion.php' </script>";
+            }
+            else
+            {
+                $message = "Incorrect username or password";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+            }
+        }
+        ?>
     </body>
 </html>
