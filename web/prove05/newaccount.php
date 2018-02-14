@@ -73,12 +73,18 @@ catch(PDOException $e)
                     echo '<h1>3</h1><br>';
                     $createUserStmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
                     echo '<h1>4</h1><br>';
-                    echo $createUser;
                     $createUserStmt->execute();
                 }
                 catch(PDOException $e)
                 {
                     echo "Error creating user: " . $e->getMessage();
+                }
+                
+                try
+                {
+                    $crt = 'CREATE USER :username WITH PASSWORD :password';
+                    $crtSt = $myDatabase->prepare($crt);
+                    $crtSt->execute();
                 }
                 
                 echo '<h1>NOW WE ARE THIS FAR</h1><br>';
