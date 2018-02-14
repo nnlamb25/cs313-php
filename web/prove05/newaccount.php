@@ -82,7 +82,7 @@ catch(PDOException $e)
                 
                 try
                 {
-                    $crt = 'CREATE USER :username WITH PASSWORD :password';
+                    $crt = "CREATE USER please_work WITH PASSWORD 'password'";
                     $crtSt = $myDatabase->prepare($crt);
                     $crtSt->execute();
                 }
