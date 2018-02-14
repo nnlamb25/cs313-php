@@ -100,7 +100,7 @@ $postID = $_SESSION['postid'];
             $stmt = $myDatabase->prepare($query);
             $stmt->bindValue(':postid', $postID, PDO::PARAM_INT);
             $stmt->bindValue(':posterid', $userid, PDO::PARAM_STR);
-            $stmt->bindValue(':reply_to_comment_id', $_GET['id'], PDO::PARAM_INT);
+            $stmt->bindValue(':reply_to_comment_id', $commentID, PDO::PARAM_INT);
             $stmt->bindValue(':text', $postReply, PDO::PARAM_STR);
             $stmt->execute();
             echo "<script>window.location = 'opinionpost.php?id=$postID' </script>";
