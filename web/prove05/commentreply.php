@@ -53,7 +53,7 @@ $commentID = $_SESSION['commentid'];
             }
         }
         
-        foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $postID . "' AND reply_to_comment_id='" . $commentID ."';") as $comment)
+        foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $postID . "' AND id='" . $commentID ."';") as $comment)
         {
             echo '<div class="comment">';
             foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='" . $comment['poster_id'] . "';") as $user)
