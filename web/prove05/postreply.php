@@ -87,7 +87,7 @@ $postID = $_GET['id'];
             $stmt->execute();
             
             echo '<h1>6</h1>';
-            echo "<script>window.location = 'openopinion.php' </script>";
+            //echo "<script>window.location = 'openopinion.php' </script>";
         }
         
         /*
