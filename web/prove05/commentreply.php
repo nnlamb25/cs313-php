@@ -44,6 +44,13 @@ $postID = $_SESSION['postid'];
             ?>
         </div>
         <?php
+        echo '<h1>WELL THIS PART WORKS!!</h1><br>';
+            echo '<h1>' . $commentID . '</h1><br>';
+            echo '<h1>WHAT ABOUT THIS?</h1><br>';
+            echo '<h1>' . $_SESSION['commentid'] . '</h1><br>';
+            echo '<h1> AND THIS?</h1><br>';
+            echo '<h1>' . $_GET['id'] . '</h1><br>';
+            echo '<h1> I HOPE SOMETHING WORKED.</h1><br>';
         foreach ($myDatabase->query("SELECT * FROM public.post_comment;") as $comment)
         {
             if($comment['id'] == $commentID)
