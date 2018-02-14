@@ -53,7 +53,8 @@ $postID = $_GET['id'];
             
             if (isset($_SESSION['username']))
             {
-                echo '<a style="color: black;text-decoration: none;padding: 5px;background-color: #78b0e2;border-radius: 4px;" href="postreply.php?id=' . $post['id'] . '">Reply</a></div>';
+                $_SESSION['postid'] = $post['id'];
+                echo '<a style="color: black;text-decoration: none;padding: 5px;background-color: #78b0e2;border-radius: 4px;" href="postreply.php">Reply</a></div>';
             }
             
             echo '<div id="comments">';
