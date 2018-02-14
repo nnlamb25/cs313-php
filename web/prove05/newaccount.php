@@ -62,6 +62,8 @@ catch(PDOException $e)
                 $stmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
                 $stmt->execute();
                 
+                $_POST['username'] = htmlspecialchars($_POST['username']);
+                
                 echo "<script>window.location = 'openopinion.php' </script>";
             }
         }
