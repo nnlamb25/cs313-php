@@ -16,6 +16,7 @@ catch(PDOException $e)
 }
 
 $commentID = $_GET['id'];
+$_SESSION['commentid'] = $commentID;
 $postID = $_SESSION['postid'];
 
 ?>
@@ -91,6 +92,8 @@ $postID = $_SESSION['postid'];
                     break;
                 }
             }
+            
+            $commentID = $_SESSION['commentid'];
             
             $query = 'INSERT INTO public.post_comment(post_id, poster_id, votes_agree, votes_disagree, changed_minds, reply_to_comment_id, comment_text, date_commented)
             VALUES (:postid, :posterid, 1, 0, 0, :reply_to_comment_id, :text, NOW())';
