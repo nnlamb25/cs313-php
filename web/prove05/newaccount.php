@@ -86,6 +86,10 @@ catch(PDOException $e)
                     $crtSt = $myDatabase->prepare($crt);
                     $crtSt->execute();
                 }
+                catch(PDOException $e)
+                {
+                    echo "Error creating user: " . $e->getMessage();
+                }
                 
                 echo '<h1>NOW WE ARE THIS FAR</h1><br>';
                 
