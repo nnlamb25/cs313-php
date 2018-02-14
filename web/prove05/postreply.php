@@ -54,7 +54,7 @@ $postID = $_GET['id'];
         ?>
         
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <textarea rows="10" cols="70" name="reply" value="" placeholder="Enter your reply" style="font-size: 14px; margin-left: 30px;width: 70%"></textarea><br><br>
+            <textarea rows="6" cols="70" name="reply" value="" placeholder="Enter your reply" style="font-size: 14px; margin-left: 30px;width: 70%"></textarea><br><br>
             <input type="submit" name="" value="submit" style="margin-left: 30px;font-size: 18px;">
         </form>
         
@@ -80,7 +80,7 @@ $postID = $_GET['id'];
             $stmt->bindValue(':posterid', $userid, PDO::PARAM_STR);
             $stmt->bindValue(':text', $postReply, PDO::PARAM_STR);
             $stmt->execute();
-            echo "<script>window.location = 'opinionpost.php?id=" . $row['id']. "' </script>";
+            echo "<script>window.location = 'opinionpost.php?id=" . $postID . "' </script>";
         }
         
         /*
