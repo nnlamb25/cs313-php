@@ -62,48 +62,6 @@ catch(PDOException $e)
                 $stmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
                 $stmt->execute();
                 
-                echo '<h1>MADE IT THIS FAR</h1><br>';
-                try
-                {
-                    $createUser = 'CREATE USER :username WITH PASSWORD :password';
-                    echo '<h1>1</h1><br>';
-                    $createUserStmt = $myDatabase->prepare($createUser);
-                    echo '<h1>2</h1><br>';
-                    $createUserStmt->bindValue(':username', $_POST['username']);
-                    echo '<h1>3</h1><br>';
-                    $createUserStmt->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
-                    echo '<h1>4</h1><br>';
-                    $createUserStmt->execute();
-                }
-                catch(PDOException $e)
-                {
-                    echo "Error creating user: " . $e->getMessage() . '<br><br>';
-                }
-                
-                try
-                {
-                    $crt = "CREATE USER please_work WITH PASSWORD 'password'";
-                    $crtSt = $myDatabase->prepare($crt);
-                    $crtSt->execute();
-                }
-                catch(PDOException $e)
-                {
-                    echo "Error creating user: " . $e->getMessage();
-                }
-                
-                echo '<h1>NOW WE ARE THIS FAR</h1><br>';
-                
-                
-                $access = 'GRANT SELECT, INSERT, UPDATE ON public.opinion_post, public.post_comment TO :username';
-                echo '<h1>5</h1><br>';
-                $accessStmt = $myDatabase->prepare($access);
-                echo '<h1>6</h1><br>';
-                $accessStmt->bindValue(':username', $_POST['username']);
-                echo '<h1>7</h1><br>';
-                $accessStmt->execute();
-                
-                echo '<h1>MADE IT TO THE END</h1><br>';
-                
                 echo "<script>window.location = 'openopinion.php' </script>";
             }
         }
