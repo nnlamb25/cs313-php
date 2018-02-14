@@ -80,7 +80,7 @@ $postID = $_SESSION['postid'];
             $stmt->bindValue(':posterid', $userid, PDO::PARAM_STR);
             $stmt->bindValue(':text', $postReply, PDO::PARAM_STR);
             $stmt->execute();
-            echo "<script>window.location = 'openopinion.php?id=$postID' </script>";
+            echo "<script>window.location = 'opinionpost.php?id=$postID' </script>";
         }
         
         /*
