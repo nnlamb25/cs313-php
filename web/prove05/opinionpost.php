@@ -28,6 +28,18 @@ $postID = $_GET['id'];
     <body>
         <div id="header">
             <a class="link" href="openopinion.php"><h1>Open Opinion</h1></a>
+            <?php
+            
+            if(isset($_SESSION['username']))
+            {
+                echo $_SESSION['username'] . ' • <a href="login.php">Switch Users</a> •  <a href="logout.php">Logout</a>';
+            }
+            else
+            {
+                echo '<a href="login.php">Login</a> • <a href="newaccount.php">Create an Account</a>';
+            }
+            
+            ?>
         </div>
         <?php
         //$post = $myDatabase->query("SELECT post_text FROM public.opinion_post WHERE id='". $postID . "';");
