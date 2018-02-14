@@ -48,10 +48,10 @@ $postID = $_GET['id'];
             echo '<div id="post_wrapper"><div id="post"><p>' . $post['post_text'] . '</p></div></div>';
             foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='". $post['poster_id'] . "';") as $user)
             {
-                echo '<div id="post_submitter"><i>' . $user['username'] . '</i></div>';
+                echo '<div id="post_submitter"><i>' . $user['username'] . '</i><br>';
             }
             
-            echo '<a href="postreply.php?id=' . $post['id'] . '">Reply</a>';
+            echo '<a href="postreply.php?id=' . $post['id'] . '">Reply</a></div>';
             
             echo '<div id="comments">';
             foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id IS NULL;") as $comment)
