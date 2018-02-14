@@ -6,7 +6,8 @@ $password = 'f16ade2ac40bc9bc38241e497207d16178f08200e4d2e4820c893760733dd068';
 $host = 'ec2-54-235-240-126.compute-1.amazonaws.com';
 $dbname = 'd9odltre339tgq';
 
-$firstVisit = true;
+$_POST['title'] = '.';
+$_POST['post'] = '.'
 
 try {
     $myDatabase = new PDO("pgsql:host=".$host."; dbname=".$dbname, $user, $password);
@@ -48,7 +49,7 @@ catch(PDOException $e)
         
         <?php
         
-        if (isset($_POST['title']) && $_POST['title'] != '' && isset($_POST['post']) && $_POST['post'] != '')
+        if (isset($_POST['title']) && $_POST['title'] != '.' && $_POST['title'] != '' && isset($_POST['post']) && $_POST['post'] != '.' && $_POST['post'] != '')
         {
             $postTitle = htmlspecialchars($_POST['title']);
             $postContent = htmlspecialchars($_POST['post']);
@@ -71,7 +72,7 @@ catch(PDOException $e)
             $stmt->execute();
             echo "<script>window.location = 'openopinion.php' </script>";
         }
-        else if ($_POST['title'] == '' || $_POST['post'] != '')
+        else if (($_POST['title'] != '.' && $_POST['title'] != '.') || $_POST['title'] == '' || $_POST['post'] != '')
         {
             $message = "You must enter a title and a post!";
             echo "<script type='text/javascript'>alert('$message');</script>";
