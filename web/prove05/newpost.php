@@ -39,9 +39,9 @@ catch(PDOException $e)
             ?>
         </div>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <input type="text" size="100" name="title" value="" placeholder="Enter an interesting and descriptive title" style="font-size: 16px; margin: 15px 0px 0px 30px;"><br><br>
-            <textarea rows="10" cols="100" name="post" value="" placeholder="Enter post description" style="font-size: 14px; margin-left: 30px;"></textarea><br><br>
-            <input type="submit" name="" value="submit" style="margin-left: 30px;">
+            <input type="text" size="70%" name="title" value="" placeholder="Enter an interesting and descriptive title" style="font-size: 16px; margin: 15px 0px 0px 30px;"><br><br>
+            <textarea rows="10" size="70%" name="post" value="" placeholder="Enter post description" style="font-size: 14px; margin-left: 30px;"></textarea><br><br>
+            <input type="submit" name="" value="submit" style="margin-left: 30px;font-size: 18px;">
         </form>
     </body>
 </html>
