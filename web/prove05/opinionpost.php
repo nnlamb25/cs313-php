@@ -42,7 +42,6 @@ $postID = $_GET['id'];
             ?>
         </div>
         <?php
-        //$post = $myDatabase->query("SELECT post_text FROM public.opinion_post WHERE id='". $postID . "';");
         foreach ($myDatabase->query("SELECT * FROM public.opinion_post WHERE id='". $postID . "';") as $post)
         {
             echo '<div id="post_title"><h2>' . $post['post_title'] . '</h2></div>';
@@ -51,6 +50,8 @@ $postID = $_GET['id'];
             {
                 echo '<div id="post_submitter"><i>' . $user['username'] . '</i></div>';
             }
+            
+            echo '<a href="postreply.php?id=' . $post['id'] . '">Reply</a>';
             
             echo '<div id="comments">';
             foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id IS NULL;") as $comment)
