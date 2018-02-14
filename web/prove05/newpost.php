@@ -43,5 +43,38 @@ catch(PDOException $e)
             <textarea rows="10" cols="70" name="post" value="" placeholder="Enter post description" style="font-size: 14px; margin-left: 30px;width: 70%"></textarea><br><br>
             <input type="submit" name="" value="submit" style="margin-left: 30px;font-size: 18px;">
         </form>
+        
+        <?php
+        
+        if (isset($_POST['title']) && $_POST['title'] != '' && isset($_POST['post']) && $_POST['post'] != '')
+        {
+            $postTitle = htmlspecialchars($_POST['title']);
+            $postContent = htmlspecialchars($_POST['post']);
+            
+            foreach ($myDatabase->query("SELECT * FROM public.user") as $user)
+            {
+                if $user['username'] == $_SESSION['username']
+                {
+                    $userid = $user['id'];
+                    break;
+                }
+            }
+            
+            $query = 'INSERT INTO public.opinion_post(poster_id, post_title, post_text, votes_agree, votes_disagree, changed_minds, date_posted)
+            VALUES (:userid, :title, :text, 1, 0, 0, NOW())';
+            $stmt = $myDatabase->prepare($query);
+            $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
+            $stmt->bindValue(':title', $postTitle, PDO::PARAM_STR);
+            $stmt->bindValue(':text', $postContent, PDO::PARAM_STR);
+            $stmt->execute();
+            echo "<script>window.location = 'openopinion.php' </script>";
+        }
+        else
+        {
+            $message = "You must enter a title and a post!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+        
+        ?>
     </body>
 </html>
