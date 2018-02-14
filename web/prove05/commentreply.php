@@ -16,7 +16,6 @@ catch(PDOException $e)
 }
 
 $commentID = $_GET['id'];
-$_SESSION['commentid'] = $commentID;
 $postID = $_SESSION['postid'];
 
 ?>
@@ -44,13 +43,6 @@ $postID = $_SESSION['postid'];
             ?>
         </div>
         <?php
-        echo '<h1>WELL THIS PART WORKS!!</h1><br>';
-            echo '<h1>' . $commentID . '</h1><br>';
-            echo '<h1>WHAT ABOUT THIS?</h1><br>';
-            echo '<h1>' . $_SESSION['commentid'] . '</h1><br>';
-            echo '<h1> AND THIS?</h1><br>';
-            echo '<h1>' . $_GET['id'] . '</h1><br>';
-            echo '<h1> I HOPE SOMETHING WORKED.</h1><br>';
         foreach ($myDatabase->query("SELECT * FROM public.post_comment;") as $comment)
         {
             if($comment['id'] == $commentID)
@@ -86,13 +78,6 @@ $postID = $_SESSION['postid'];
         </form>
         
         <?php
-        echo '<h1>WELL THIS PART WORKS!!</h1><br>';
-            echo '<h1>' . $commentID . '</h1><br>';
-            echo '<h1>WHAT ABOUT THIS?</h1><br>';
-            echo '<h1>' . $_SESSION['commentid'] . '</h1><br>';
-            echo '<h1> AND THIS?</h1><br>';
-            echo '<h1>' . $_GET['id'] . '</h1><br>';
-            echo '<h1> I HOPE SOMETHING WORKED.</h1><br>';
         
         if (isset($_POST['reply']) && $_POST['reply'] != '')
         {
@@ -107,24 +92,19 @@ $postID = $_SESSION['postid'];
                 }
             }
             
-            $commentID = $_SESSION['commentid'];
-            echo '<h1>WELL THIS PART WORKS!!</h1><br>';
-            echo '<h1>' . $commentID . '</h1><br>';
-            echo '<h1>WHAT ABOUT THIS?</h1><br>';
-            echo '<h1>' . $_SESSION['commentid'] . '</h1><br>';
-            echo '<h1> AND THIS?</h1><br>';
-            echo '<h1>' . $_GET['id'] . '</h1><br>';
-            echo '<h1> I HOPE SOMETHING WORKED.</h1><br>';
-            
             $query = 'INSERT INTO public.post_comment(post_id, poster_id, votes_agree, votes_disagree, changed_minds, reply_to_comment_id, comment_text, date_commented)
             VALUES (:postid, :posterid, 1, 0, 0, :reply_to_comment_id, :text, NOW())';
             $stmt = $myDatabase->prepare($query);
             $stmt->bindValue(':postid', $postID, PDO::PARAM_INT);
             $stmt->bindValue(':posterid', $userid, PDO::PARAM_STR);
-            $stmt->bindValue(':reply_to_comment_id', $commentID, PDO::PARAM_INT);
+            $stmt->bindValue(':reply_to_comment_id', $_SESSION['commentid'], PDO::PARAM_INT);
             $stmt->bindValue(':text', $postReply, PDO::PARAM_STR);
             $stmt->execute();
             //echo "<script>window.location = 'opinionpost.php?id=$postID' </script>";
+        }
+        else
+        {
+            $_SESSION['commentid'] = $commentID;
         }
         
         /*
