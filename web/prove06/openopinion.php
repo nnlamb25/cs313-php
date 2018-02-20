@@ -54,7 +54,7 @@ $myDatabase = get_db();
         }
         else
         {
-            foreach ($myDatabase->query('SELECT * FROM public.opinion_post;') as $row)
+            foreach ($myDatabase->query('SELECT * FROM public.opinion_post ORDER BY date_posted;') as $row)
             {
                 echo '<div class="post_link"><a class="link" href="opinionpost.php?id=' . $row['id']. '">' . $row['post_title'] . '</div>';
             }
