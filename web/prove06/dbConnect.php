@@ -17,7 +17,7 @@ function get_db()
         echo "Connection Failed: " . $e->getMessage();
     }
     
-    return $myDatabase
+    return $myDatabase;
 }
 
 ?>
