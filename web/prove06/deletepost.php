@@ -4,6 +4,9 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+require("dbConnect.php");
+$myDatabase = get_db();
+
 $postID = $_GET['id'];
 
 ?>
