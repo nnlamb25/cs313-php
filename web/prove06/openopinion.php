@@ -58,7 +58,7 @@ $myDatabase = get_db();
             {
                 echo '<div class="post_link"><a class="link" href="opinionpost.php?id=' . $row['id']. '">' . $row['post_title'];
                 
-                $usrID;
+                $usrID = 00;
                 if(isset($_SESSION['username']))
                 {
                     foreach($myDatabase->query('SELECT * FROM public.user' as $user))
@@ -70,10 +70,10 @@ $myDatabase = get_db();
                         }
                     }
                     
-                    if($usrID == $row['poster_id'] || $_SESSION['isMod'])
-                    {
-                           echo '<a href="deletepost.php?id=' . $row['id']. '" style="font-size: 12px;">delete</a>';
-                    }
+                    //if($usrID == $row['poster_id'] || $_SESSION['isMod'])
+                    //{
+                    //       echo '<a href="deletepost.php?id=' . $row['id']. '" style="font-size: 12px;">delete</a>';
+                    //}
                 }
                 echo '</div>';
             }
