@@ -56,7 +56,7 @@ $myDatabase = get_db();
         {
             foreach ($myDatabase->query('SELECT * FROM public.opinion_post ORDER BY date_posted DESC;') as $row)
             {
-                echo '<div class="post_link"><a class="link" href="opinionpost.php?id=' . $row['id']. '">' . $row['post_title'] . '</div>';
+                echo '<div class="post_link"><a class="link" href="opinionpost.php?id=' . $row['id']. '">' . $row['post_title'] . $row['date_posted'] . '</div>';
             }
         }
         
