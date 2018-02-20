@@ -61,7 +61,7 @@ $myDatabase = get_db();
                 $usrID;
                 if(isset($_SESSION['username']))
                 {
-                    foreach($myDatabase->query('SELECT * FROM public.user') as $user))
+                    foreach($myDatabase->query('SELECT * FROM public.user') as $user)
                     {
                         if($user['username'] == $_SESSION['username'])
                         {
