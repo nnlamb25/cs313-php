@@ -72,7 +72,7 @@ $myDatabase = get_db();
                     
                     if($usrID == $row['poster_id'] || $_SESSION['isMod'])
                     {
-                           echo '<a href="deletepost.php?id=' . $row['id']. '" style="font-size: 12px;">delete</a>';
+                           echo ' - <a href="deletepost.php?id=' . $row['id']. '" style="font-size: 10px;"> delete</a>';
                     }
                 }
                 echo '</div>';
