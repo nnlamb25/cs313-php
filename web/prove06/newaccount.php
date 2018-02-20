@@ -55,6 +55,7 @@ $myDatabase = get_db();
                 $stmt->execute();
                 
                 $_SESSION['username'] = $enteredUserName;
+                $_SESSION['isMod'] = false;
                 
                 echo "<script>window.location = 'openopinion.php' </script>";
             }

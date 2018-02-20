@@ -30,12 +30,14 @@ $myDatabase = get_db();
             $enteredUserName = htmlspecialchars($_POST['username']);
             $enteredPassword = htmlspecialchars($_POST['password']);
             $userExists = false;
+            $isMod = false;
 
             foreach ($myDatabase->query("SELECT * FROM public.user") as $user)
             {
                 if ($user['username'] == $enteredUserName && $user['password'] == $enteredPassword)
                 {
                     $userExists = true;
+                    $isMod = $user['is_mod'];
                     break;
                 }
             }
@@ -43,6 +45,7 @@ $myDatabase = get_db();
             if ($userExists)
             {
                 $_SESSION['username'] = $enteredUserName;
+                $_SESSION['isMod'] = $isMod;
                 echo "<script>window.location = 'openopinion.php' </script>";
             }
             else
