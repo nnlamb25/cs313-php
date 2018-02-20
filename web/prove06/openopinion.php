@@ -57,7 +57,7 @@ $myDatabase = get_db();
             foreach ($myDatabase->query('SELECT * FROM public.opinion_post ORDER BY date_posted DESC;') as $row)
             {
                 echo '<div class="post_link"><a class="link" href="opinionpost.php?id=' . $row['id']. '">' . $row['post_title'];// . '</div>';
-                if(isset($_SESSION['username']) && ($_SESSION['username'] == $row[username] || $_SESSION['isMod']))
+                if(isset($_SESSION['username']) && ($_SESSION['username'] == $row['username'] || $_SESSION['isMod']))
                 {
                        echo '<a href="deletepost.php?id=' . $row['id']. '" style="font-size: 12px;">delete</a></div>';
                 }
