@@ -43,6 +43,7 @@ $postID = $_GET['id'];
             {
                 echo '<div id="post_submitter"><i>' . $user['username'] . '</i>';
             }
+            
             $usrID;
             if(isset($_SESSION['username']))
             {
@@ -57,7 +58,7 @@ $postID = $_GET['id'];
 
                 if($usrID == $post['poster_id'] || $_SESSION['isMod'])
                 {
-                       echo ' - <a href="deletepost.php?id=' . $row['id']. '" style="font-size: 10px;"> delete</a>';
+                       echo ' - <a href="deletepost.php?id=' . $post['id']. '" style="font-size: 10px;"> delete</a>';
                 }
             }
             
