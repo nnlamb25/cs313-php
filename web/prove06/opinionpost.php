@@ -70,7 +70,7 @@ $postID = $_GET['id'];
             }
             
             echo '</div><div id="comments">';
-            foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id IS NULL;") as $comment)
+            foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id IS NULL ORDER BY date_posted DESC;") as $comment)
             {
                 echo '<div class="comment">';
                 foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='" . $comment['poster_id'] . "';") as $user)
