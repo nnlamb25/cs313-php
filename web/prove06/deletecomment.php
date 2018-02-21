@@ -32,11 +32,13 @@ $postID = $_GET['postID'];
                         $stmt = $myDatabase->prepare($delete);
                         $stmt->bindValue(':id', $postID, PDO::PARAM_INT);
                         $stmt->execute();
+                        echo 'DONE<br>';
                     }
                 }
             }
         }
     }
+    echo 'END<br>';
     
     //echo "<script>window.location = 'opinionpost.php?id=$postID' </script>";
     ?>
