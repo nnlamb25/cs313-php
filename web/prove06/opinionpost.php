@@ -84,12 +84,13 @@ $postID = $_GET['id'];
                 }
                 if (isset($_SESSION['username']))
                 {
+                    echo '<div class="comment_text">' . $comment['comment_text'];
                     if($usrID == $comment['poster_id'] || $_SESSION['isMod'])
                     {
-                        echo ' - <a href="deletecomment.php?id=' . $comment['id']. '" style="font-size: 10px;"> delete</a>';
+                        echo ' - <a href="deletecomment.php?id=' . $comment['id']. '&postID=' . $postID . '" style="font-size: 10px;"> delete</a>';
                     }
                 
-                    echo '<br><br><a style="text-size: 12px;color: black;text-decoration: none;padding: 3px;background-color: #78b0e2;border-radius: 2px;" href="commentreply.php?id='. $comment['id'] . '&postID=' . $postID . '>Reply</a>';
+                    echo '<br><br><a style="text-size: 12px;color: black;text-decoration: none;padding: 3px;background-color: #78b0e2;border-radius: 2px;" href="commentreply.php?id='. $comment['id'] . '>Reply</a>';
                 }
                 else
                 {
