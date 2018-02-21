@@ -41,8 +41,27 @@ $postID = $_GET['id'];
             echo '<div id="post_wrapper"><div id="post"><p>' . $post['post_text'] . '</p></div></div>';
             foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='". $post['poster_id'] . "';") as $user)
             {
-                echo '<div id="post_submitter"><i>' . $user['username'] . '</i><br><br>';
+                echo '<div id="post_submitter"><i>' . $user['username'] . '</i>';
             }
+            $usrID;
+            if(isset($_SESSION['username']))
+            {
+                foreach($myDatabase->query('SELECT * FROM public.user') as $user)
+                {
+                    if($user['username'] == $_SESSION['username'])
+                    {
+                        $usrID = $user['id'];
+                        break;
+                    }
+                }
+
+                if($usrID == $post['poster_id'] || $_SESSION['isMod'])
+                {
+                       echo ' - <a href="deletepost.php?id=' . $row['id']. '" style="font-size: 10px;"> delete</a>';
+                }
+            }
+            
+            echo '<br><br>';
             
             if (isset($_SESSION['username']))
             {
