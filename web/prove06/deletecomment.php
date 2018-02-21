@@ -30,7 +30,7 @@ $postID = $_GET['postID'];
                         echo 'INSIDE<br>';
                         $delete = "DELETE FROM public.post_comment WHERE id = :id";
                         $stmt = $myDatabase->prepare($delete);
-                        $stmt->bindValue(':id', $postID, PDO::PARAM_INT);
+                        $stmt->bindValue(':id', $commentID, PDO::PARAM_INT);
                         $stmt->execute();
                         echo 'DONE<br>';
                     }
