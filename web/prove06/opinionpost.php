@@ -76,15 +76,28 @@ $postID = $_GET['id'];
                 foreach ($myDatabase->query("SELECT * FROM public.user WHERE id='" . $comment['poster_id'] . "';") as $user)
                 {
                     echo '<div class="commenter">' . $user['username'] . '</div>';
+                    if(isset($_SESSION['username']) && $user['username'] == $_SESSION['username'])
+                    {
+                        $usrID = $user['id'];
+                        break;
+                    }
+                        
                 }
                 if (isset($_SESSION['username']))
                 {
-                    echo '<div class="comment_text">' . $comment['comment_text'] . '<br><br><a style="text-size: 12px;color: black;text-decoration: none;padding: 3px;background-color: #78b0e2;border-radius: 2px;" href="commentreply.php?id='. $comment['id'] . '">Reply</a></div>';
+                    if($usrID == $comment['poster_id'] || $_SESSION['isMod'])
+                    {
+                        echo ' - <a href="deletecomment.php?id=' . $comment['id']. '" style="font-size: 10px;"> delete</a>';
+                    }
+                
+                    echo '<br><br><a style="text-size: 12px;color: black;text-decoration: none;padding: 3px;background-color: #78b0e2;border-radius: 2px;" href="commentreply.php?id='. $comment['id'] . '">Reply</a>';
                 }
                 else
                 {
-                    echo '<div class="comment_text">' . $comment['comment_text'] . '</div>';
+                    echo '<div class="comment_text">' . $comment['comment_text'];
                 }
+                
+                echo '</div>';
                 
                 // How do I continuously nest replys?
                 foreach ($myDatabase->query("SELECT * FROM public.post_comment WHERE post_id='" . $post['id'] . "' AND reply_to_comment_id='" . $comment['id'] . "';") as $reply)
