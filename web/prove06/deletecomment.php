@@ -8,6 +8,7 @@ require("dbConnect.php");
 $myDatabase = get_db();
 
 $commentID = $_GET['id'];
+$postID = $_GET['postID'];
 
 ?>
 
@@ -34,6 +35,6 @@ $commentID = $_GET['id'];
         }
     }
     
-    echo "<script>window.location = 'openopinion.php' </script>";
+    echo "<script>window.location = 'opinionpost.php?id=$postID' </script>";
     ?>
 </html>
